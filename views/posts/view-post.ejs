@@ -1,0 +1,31 @@
+<%- include('../partials/header.ejs') %>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-10 mx-auto">
+                <div class="card shadow ">
+                    <div class="btn ms-auto "><a class="nav-link  <%= active =='home' ? 'active':'' %>" href="/"><i class="fa-solid fa-xmark text-danger me-4 mt-4 fs-1 "></i></a>
+                    </div>
+                    <div class="card-body p-3 m-auto mt-2">
+                        
+                        <img src="/uploads/<%= post.image %>" class="img-fluid shadow "<%= post.title %>">
+                        <div
+                            class="lead d-flex align-items-centerfw-semibold justify-content-between text-secondary my-3">
+                            <div>Author: <%= post.user.name %>
+                            </div>
+                            <div>Created:<%= post.createdAt.toLocaleString() %>
+                            </div>
+                        </div>
+                        <h1 class="text-secondary fw-bold ">
+                            <%= post.title %>
+                        </h1>
+                        <p>
+                            <%= post.content %>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../partials/footer') %>
+    
